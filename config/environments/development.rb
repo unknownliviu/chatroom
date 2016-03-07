@@ -10,6 +10,8 @@ Rails.application.configure do
   config.eager_load = false
 
   # Show full error reports.
+  config.web_console.whiny_requests = false
+  
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
