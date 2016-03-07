@@ -11,7 +11,14 @@ Rails.application.configure do
 
   # Show full error reports.
   config.web_console.whiny_requests = false
-  
+
+  config.middleware.insert_before 0, "Rack::Cors" do
+    allow do
+      origins '*'
+      resource '*', :headers => :any, :methods => [:get, :post, :options]
+    end
+  end
+
   config.consider_all_requests_local = true
 
   # Enable/disable caching. By default caching is disabled.
